@@ -25,12 +25,12 @@ begin
     B_data <= (others => '0') when unsigned(B_addr) = 0 else
               R(to_integer(unsigned(B_addr)));
 
-    process(clk)
+    process(clk, rst)
     begin
-        if rising_edge(clk) then
-            if rst = '1' then
-                R <= (others => (others => '0'));
-            elsif W_en = '1' and unsigned(W_addr) /= 0 then
+        if rst = '1' then
+            R <= (others => (others => '0'));
+        elsif rising_edge(clk) then
+            if W_en = '1' and unsigned(W_addr) /= 0 then
                 R(to_integer(unsigned(W_addr))) <= W_data;
             end if;
         end if;

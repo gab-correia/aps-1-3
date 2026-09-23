@@ -16,3 +16,4 @@ tests/__pycache__/
 
 # python
 .venv/
+c5_pin_model_dump.txt

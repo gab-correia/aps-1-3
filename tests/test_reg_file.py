@@ -89,3 +89,15 @@ async def test_reset_limpa(dut):
     dut.rst.value = 0
     a, _ = await read(dut, 7, 0)
     assert a == 0, f"R7 deveria ser 0 apos reset: {a:#x}"
+
+
+@cocotb.test()
+async def test_reset_assincrono(dut):
+    """Reset zera o banco sem precisar de borda de clock."""
+    await setup(dut)
+    await write(dut, 9, 0xBEEF)
+    dut.rst.value = 1
+    await Timer(1, "ns")
+    a, _ = await read(dut, 9, 0)
+    dut.rst.value = 0
+    assert a == 0, f"R9 deveria ser 0 logo apos rst: {a:#x}"

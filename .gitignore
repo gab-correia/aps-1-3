@@ -1,0 +1,18 @@
+# Quartus
+db/
+incremental_db/
+output_files/
+simulation/
+*.qws
+*.bak
+greybox_tmp/
+
+# cocotb
+tests/sim_build/
+tests/results.xml
+tests/__pycache__/
+*.vcd
+*.ghw
+
+# python
+.venv/

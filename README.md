@@ -1,4 +1,4 @@
-# APS1 - DESCOMP
+# APS-1-3 - DESCOMP
 
 Projeto Quartus (DE0-CV, Cyclone V 5CEBA4F23C7).
 

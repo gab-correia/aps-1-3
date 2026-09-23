@@ -9,7 +9,7 @@ greybox_tmp/
 
 # cocotb
 tests/sim_build/
-tests/results.xml
+tests/results*.xml
 tests/__pycache__/
 *.vcd
 *.ghw
